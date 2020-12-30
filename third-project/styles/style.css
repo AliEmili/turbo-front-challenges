@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ECEEF5;
+    color: #1A2250;
+}
+
+.container {
+    display: flex;
+    background-color: #FFFFFF;
+    padding: 40px 30px 30px 30px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.container::after {
+    content: "";
+    background-color: #ECEEF5;
+    width: 90%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+}
+
+.container ul {
+    min-width: 100px;
+    flex-grow: 1;
+    padding-bottom: 20px;
+}
+
+.container ul li {
+    list-style: none;
+    padding-bottom: 10px;
+}
+
+.container .newsletter {
+    min-width: 250px;
+    max-width: 450px;
+    width: 50%;
+}
+
+.container .newsletter p {
+    padding-bottom: 10px;
+    text-align: justify;
+}
+
+.container .newsletter .email {
+    border: 1px solid #EAECF3;
+    padding: 10px;
+    outline: none;
+}
+
+.container .newsletter .email::placeholder {
+    color: #EAECF3;
+}
+
+.container .newsletter .email:active,
+.container .newsletter .email:focus {
+    border: 1px solid gray;
+}
+
+.container .newsletter .btn-subscribe {
+    padding: 10px;
+    border: none;
+    color: #FFFFFF;
+    background: linear-gradient(to right, #8ACAFD 0%, #6887F3 100%);
+    cursor: pointer;
+    transition: opacity 0.5s ease;
+}
+
+.container .newsletter .btn-subscribe:hover {
+    opacity: 0.8;
+}
+
+.container .newsletter .btn-subscribe,
+.container .newsletter .email {
+    width: 250px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+.container .newsletter .subscribe-section {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .policy {
+    padding: 20px 30px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    color: #ACA3C0;
+}
+
+footer {
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+}
