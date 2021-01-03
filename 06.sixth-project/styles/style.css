@@ -2,3 +2,45 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box; }
+
+img {
+  display: block;
+  cursor: pointer; }
+
+li {
+  list-style: none;
+  cursor: pointer; }
+
+body header {
+  background-color: #fbfcfe; }
+  body header .container {
+    padding-top: 30px; }
+    body header .container .header-background-container {
+      display: none; }
+    body header .container nav {
+      width: 70%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row; }
+      body header .container nav .logo-container {
+        width: 120px; }
+        body header .container nav .logo-container img {
+          width: 100%;
+          transition: all 0.5s ease; }
+          body header .container nav .logo-container img:hover {
+            opacity: 0.7; }
+      body header .container nav .menu-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        column-gap: 40px; }
+        body header .container nav .menu-container li {
+          padding: 0 3px;
+          transition: all 0.5s ease; }
+          body header .container nav .menu-container li.active-li {
+            border-bottom: 2px solid #c1187b; }
+          body header .container nav .menu-container li:hover {
+            color: gray; }

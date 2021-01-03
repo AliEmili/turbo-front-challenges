@@ -1,5 +1,63 @@
+@import "./mixins.scss";
+$primary-background: #fbfcfe;
+$secondary-background: #f9f9f9;
+$primary-purple: #c1187b;
+$primary-transition: all 0.5s ease;
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+img {
+    display: block;
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+    cursor: pointer;
+}
+
+body {
+    header {
+        background-color: $primary-background;
+        .container {
+            padding-top: 30px;
+            .header-background-container {
+                display: none;
+            }
+            nav {
+                width: 70%;
+                margin: auto;
+                @include flexBox(space-between, center);
+                .logo-container {
+                    width: 120px;
+                    img {
+                        width: 100%;
+                        transition: $primary-transition;
+                        &:hover {
+                            opacity: 0.7;
+                        }
+                    }
+                }
+                .menu-container {
+                    @include flexBox(center, center);
+                    column-gap: 40px;
+                    li {
+                        // color: $primary-background;
+                        // temporary
+                        padding: 0 3px;
+                        transition: $primary-transition;
+                        &.active-li {
+                            border-bottom: 2px solid $primary-purple;
+                        }
+                        &:hover {
+                            color: gray;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
