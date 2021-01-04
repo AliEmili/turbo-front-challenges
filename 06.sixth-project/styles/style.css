@@ -1,13 +1,12 @@
 @font-face {
   font-family: ROBOTO;
-  src: url("../assets/Roboto-Regular.ttf") format("ttf");
-  font-weight: normal;
-  font-size: normal; }
+  src: url(../assets/Roboto-Thin.ttf) format("ttf"); }
 
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  outline: none; }
 
 img {
   display: block;
@@ -17,11 +16,25 @@ li {
   list-style: none;
   cursor: pointer; }
 
+button {
+  background-color: #c1187b;
+  border: none;
+  color: #fbfcfe;
+  padding: 15px;
+  min-width: 250px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.5s ease; }
+  button:hover {
+    opacity: 0.8; }
+
 body {
   overflow-x: hidden;
   font-family: ROBOTO, sans-serif; }
   body header {
-    background-color: #fbfcfe; }
+    background-color: #fbfcfe;
+    min-height: 700px; }
     body header .container {
       padding-top: 30px; }
       body header .container .header-background-container {
@@ -33,9 +46,18 @@ body {
         top: -500px;
         overflow: hidden;
         transform: rotate(25deg);
-        z-index: 0;
-        background: url("../assets/window.jpg");
-        background-position: -333px 240px; }
+        z-index: 0; }
+        body header .container .header-background-container .img-container {
+          width: 110%;
+          transform: rotate(-30deg);
+          position: relative;
+          top: 140px;
+          right: 200px; }
+          body header .container .header-background-container .img-container img {
+            width: 100%;
+            position: relative;
+            top: 250px;
+            cursor: auto; }
       body header .container nav {
         width: 70%;
         margin: auto;
@@ -66,3 +88,12 @@ body {
               border-bottom: 2px solid #c1187b; }
             body header .container nav .menu-container li:hover {
               color: gainsboro; }
+    body header .main-text-container {
+      width: 70%;
+      margin: auto;
+      margin-top: 250px; }
+      body header .main-text-container .main-text {
+        font-size: 60px; }
+      body header .main-text-container .secondary-text {
+        font-size: 38px;
+        padding-bottom: 50px; }

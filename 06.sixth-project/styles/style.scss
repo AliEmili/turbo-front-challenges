@@ -1,9 +1,7 @@
 @import "./mixins.scss";
 @font-face {
     font-family: ROBOTO;
-    src: url('../assets/Roboto-Regular.ttf') format('ttf');
-    font-weight: normal;
-    font-size: normal;
+    src: url(../assets/Roboto-Thin.ttf) format('ttf');
 }
 
 $primary-background: #fbfcfe;
@@ -14,6 +12,7 @@ $primary-transition: all 0.5s ease;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    outline: none;
 }
 
 img {
@@ -26,11 +25,27 @@ li {
     cursor: pointer;
 }
 
+button {
+    background-color: $primary-purple;
+    border: none;
+    color: $primary-background;
+    padding: 15px;
+    min-width: 250px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: $primary-transition;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
 body {
     overflow-x: hidden;
     font-family: ROBOTO, sans-serif;
     header {
         background-color: $primary-background;
+        min-height: 700px;
         .container {
             padding-top: 30px;
             .header-background-container {
@@ -43,14 +58,24 @@ body {
                 overflow: hidden;
                 transform: rotate(25deg);
                 z-index: 0;
-                background: url('../assets/window.jpg');
-                background-position: -333px 240px;
+                .img-container {
+                    width: 110%;
+                    transform: rotate(-30deg);
+                    position: relative;
+                    top: 140px;
+                    right: 200px;
+                    img {
+                        width: 100%;
+                        position: relative;
+                        top: 250px;
+                        cursor: auto;
+                    }
+                }
             }
             nav {
                 width: 70%;
                 margin: auto;
-                @include flexBox(space-between,
-                center);
+                @include flexBox(space-between, center);
                 .logo-container {
                     width: 120px;
                     img {
@@ -62,8 +87,7 @@ body {
                     }
                 }
                 .menu-container {
-                    @include flexBox(center,
-                    center);
+                    @include flexBox(center, center);
                     column-gap: 70px;
                     li {
                         z-index: 1;
@@ -81,5 +105,18 @@ body {
                 }
             }
         }
+        .main-text-container {
+            width: 70%;
+            margin: auto;
+            margin-top: 250px;
+            .main-text {
+                font-size: 60px;
+            }
+            .secondary-text {
+                font-size: 38px;
+                padding-bottom: 50px;
+            }
+        }
     }
+    main {}
 }
