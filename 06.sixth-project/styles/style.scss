@@ -1,4 +1,11 @@
 @import "./mixins.scss";
+@font-face {
+    font-family: ROBOTO;
+    src: url('../assets/Roboto-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-size: normal;
+}
+
 $primary-background: #fbfcfe;
 $secondary-background: #f9f9f9;
 $primary-purple: #c1187b;
@@ -20,17 +27,30 @@ li {
 }
 
 body {
+    overflow-x: hidden;
+    font-family: ROBOTO, sans-serif;
     header {
         background-color: $primary-background;
         .container {
             padding-top: 30px;
             .header-background-container {
-                display: none;
+                width: 1500px;
+                height: 1000px;
+                border-radius: 200px;
+                position: absolute;
+                right: -170px;
+                top: -500px;
+                overflow: hidden;
+                transform: rotate(25deg);
+                z-index: 0;
+                background: url('../assets/window.jpg');
+                background-position: -333px 240px;
             }
             nav {
                 width: 70%;
                 margin: auto;
-                @include flexBox(space-between, center);
+                @include flexBox(space-between,
+                center);
                 .logo-container {
                     width: 120px;
                     img {
@@ -42,18 +62,20 @@ body {
                     }
                 }
                 .menu-container {
-                    @include flexBox(center, center);
-                    column-gap: 40px;
+                    @include flexBox(center,
+                    center);
+                    column-gap: 70px;
                     li {
-                        // color: $primary-background;
-                        // temporary
+                        z-index: 1;
                         padding: 0 3px;
+                        color: $primary-background;
                         transition: $primary-transition;
+                        font-size: 20px;
                         &.active-li {
                             border-bottom: 2px solid $primary-purple;
                         }
                         &:hover {
-                            color: gray;
+                            color: gainsboro;
                         }
                     }
                 }
