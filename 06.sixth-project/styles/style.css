@@ -16,7 +16,7 @@ li {
   list-style: none;
   cursor: pointer; }
 
-button {
+button:not(.btn-next) {
   background-color: #c1187b;
   border: none;
   color: #fbfcfe;
@@ -26,7 +26,7 @@ button {
   font-size: 16px;
   cursor: pointer;
   transition: all 0.5s ease; }
-  button:hover {
+  button:not(.btn-next):hover {
     opacity: 0.8; }
 
 body {
@@ -97,3 +97,91 @@ body {
       body header .main-text-container .secondary-text {
         font-size: 38px;
         padding-bottom: 50px; }
+  body main {
+    background-color: #fbfcfe; }
+    body main .why-container {
+      padding-top: 50px;
+      width: 70%;
+      margin: auto;
+      position: relative;
+      margin-bottom: 200px; }
+      body main .why-container .two-sided-container {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-direction: row;
+        width: 100%; }
+        body main .why-container .two-sided-container .img-container {
+          flex-basis: 40%; }
+          body main .why-container .two-sided-container .img-container img {
+            width: 100%;
+            border-radius: 2px; }
+        body main .why-container .two-sided-container .why-content-container {
+          flex-basis: 60%;
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          flex-direction: row; }
+          body main .why-container .two-sided-container .why-content-container .content {
+            padding: 150px 0 0 150px; }
+            body main .why-container .two-sided-container .why-content-container .content .main-text {
+              font-size: 35px;
+              padding-bottom: 20px; }
+            body main .why-container .two-sided-container .why-content-container .content .secondary-text {
+              font-size: 18px;
+              text-align: justify; }
+      body main .why-container .swiper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        background-color: #ffffff;
+        box-shadow: 5px 10px 30px 0 rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        padding-top: 50px;
+        border-radius: 2px;
+        position: absolute;
+        bottom: -50px;
+        left: 250px; }
+        body main .why-container .swiper .swiper-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: row;
+          column-gap: 50px;
+          position: relative; }
+          body main .why-container .swiper .swiper-container .card {
+            text-align: center; }
+            body main .why-container .swiper .swiper-container .card img {
+              width: 100%;
+              border-radius: 2px; }
+            body main .why-container .swiper .swiper-container .card p {
+              padding-top: 20px; }
+              body main .why-container .swiper .swiper-container .card p.active {
+                color: #c1187b; }
+          body main .why-container .swiper .swiper-container .btn-next {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            right: -50px;
+            border: none;
+            background-color: #c1187b;
+            color: #fbfcfe;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row; }
+            body main .why-container .swiper .swiper-container .btn-next:hover {
+              opacity: 0.8; }
+            body main .why-container .swiper .swiper-container .btn-next .arrow-right {
+              width: 15px;
+              height: 15px;
+              transform: rotate(45deg);
+              border: 1px solid #fbfcfe;
+              border-bottom: none;
+              border-left: none;
+              position: relative;
+              right: 5px; }
