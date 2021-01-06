@@ -5,7 +5,7 @@
 }
 
 $primary-background: #fbfcfe;
-$secondary-background: #f9f9f9;
+$secondary-background: #f8f8f8;
 $primary-purple: #c1187b;
 $primary-transition: all 0.5s ease;
 * {
@@ -18,6 +18,7 @@ $primary-transition: all 0.5s ease;
 img {
     display: block;
     cursor: pointer;
+    border-radius: 2px;
 }
 
 li {
@@ -119,6 +120,10 @@ body {
         }
     }
     main {
+        .container {
+            width: 50%;
+            margin: auto;
+        }
         background-color: $primary-background;
         .why-container {
             padding-top: 50px;
@@ -133,7 +138,6 @@ body {
                     flex-basis: 40%;
                     img {
                         width: 100%;
-                        border-radius: 2px;
                     }
                 }
                 .why-content-container {
@@ -170,7 +174,6 @@ body {
                         text-align: center;
                         img {
                             width: 100%;
-                            border-radius: 2px;
                         }
                         p {
                             &.active {
@@ -204,6 +207,214 @@ body {
                             position: relative;
                             right: 5px;
                         }
+                    }
+                }
+            }
+        }
+        .offer {
+            background-color: $secondary-background;
+            padding: 100px 0;
+            .container {
+                @include flexBox(center, center, column);
+                .main-text {
+                    font-size: 40px;
+                    padding-bottom: 20px;
+                }
+                .secondary-text {
+                    text-align: center;
+                    padding-bottom: 50px;
+                }
+                .cards-container {
+                    @include flexBox(center, stretch);
+                    column-gap: 50px;
+                    .cards {
+                        @include flexBox(flex-start, center, column);
+                        text-align: center;
+                        padding: 20px 10px;
+                        background-color: $primary-background;
+                        min-width: 200px;
+                        flex-basis: 20%;
+                        border-radius: 6px;
+                        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.1);
+                        img {
+                            width: 30px;
+                            height: auto;
+                            padding-bottom: 20px;
+                        }
+                        p {
+                            &:nth-child(2) {
+                                font-weight: bold;
+                                padding-bottom: 5px;
+                            }
+                            &:nth-child(3) {
+                                opacity: 0.7;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .services {
+            padding: 0 0 100px 0;
+            .container {
+                @include flexBox(center, stretch);
+                .right-side {
+                    flex-basis: 60%;
+                    @include flexBox(center, flex-end);
+                    .barbershop-container {
+                        width: 300px;
+                        margin-bottom: 50px;
+                        height: 70%;
+                        overflow: hidden;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .floor-container {
+                        width: 200px;
+                        position: relative;
+                        top: 10px;
+                        border-radius: 2px;
+                        right: -50px;
+                        padding: 10px;
+                        background-color: $primary-background;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+                .left-side {
+                    flex-basis: 40%;
+                    @include flexBox(flex-end, flex-start, column);
+                    .main-text {
+                        margin-bottom: 20px;
+                        font-size: 30px;
+                    }
+                    .about-us {
+                        margin-bottom: 50px;
+                    }
+                    .secondary-text {
+                        margin-bottom: 40px;
+                    }
+                }
+            }
+        }
+        .tabs-container {
+            background-color: $secondary-background;
+            padding: 100px 0;
+            .container {
+                @include flexBox(flex-start, flex-start, column);
+                row-gap: 20px;
+                .tab-options {
+                    @include flexBox(flex-start, center);
+                    column-gap: 20px;
+                    li {
+                        font-weight: bold;
+                        &.active {
+                            color: $primary-purple;
+                        }
+                    }
+                }
+                .main-img-container {
+                    width: 100%;
+                    height: 200px;
+                    overflow: hidden;
+                    img {
+                        width: 100%;
+                        position: relative;
+                        top: -110%;
+                    }
+                }
+                .cards-container {
+                    @include flexBox(flex-start, center);
+                    column-gap: 20px;
+                    .card {
+                        .img-container {
+                            height: 200px;
+                            overflow: hidden;
+                            img {
+                                width: 100%;
+                            }
+                        }
+                        .main-text {
+                            font-size: 18px;
+                            padding-top: 10px;
+                            padding-bottom: 5px;
+                        }
+                        .secondary-text {
+                            opacity: 0.5;
+                        }
+                    }
+                }
+            }
+        }
+        .user-experince {
+            padding: 100px 0;
+            text-align: center;
+            .main-text {
+                font-size: 40px;
+            }
+            .secondary-text {
+                font-size: 25px;
+                padding-bottom: 100px;
+            }
+            .comments-container {
+                @include flexBox(center, stretch);
+                column-gap: 70px;
+                .card {
+                    flex-basis: 50%;
+                    position: relative;
+                    box-shadow: 5px 10px 30px 0 rgba(0, 0, 0, 0.1);
+                    padding: 35px;
+                    text-align: left;
+                    .img-container {
+                        width: 70px;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        position: absolute;
+                        left: -35px;
+                        top: -35px;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .row {
+                        @include flexBox(space-between, center);
+                        padding-bottom: 20px;
+                        .stars {
+                            @include flexBox(center, center);
+                            img {
+                                width: 15px;
+                            }
+                        }
+                    }
+                    .comment-container {
+                        blockquote {
+                            opacity: 0.5;
+                            font-style: italic;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        padding-bottom: 50px;
+        background-color: $primary-background;
+        .logo-container {
+            width: 50%;
+            margin: auto;
+            @include flexBox(center, center);
+            column-gap: 100px;
+            .logo {
+                flex-basis: 25%;
+                img {
+                    width: 100%;
+                    filter: grayscale(1);
+                    opacity: 0.5;
+                    transition: $primary-transition;
+                    &:hover {
+                        opacity: 1;
                     }
                 }
             }
