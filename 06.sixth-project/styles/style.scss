@@ -328,7 +328,9 @@ body {
                 .cards-container {
                     @include flexBox(flex-start, center);
                     column-gap: 20px;
+                    width: 100%;
                     .card {
+                        flex-basis: 33%;
                         .img-container {
                             height: 200px;
                             overflow: hidden;

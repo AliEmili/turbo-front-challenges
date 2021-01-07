@@ -4,3 +4,9 @@
     align-items: $align-items;
     flex-direction: $flex-direction;
 }
+
+@mixin breakpoint($size) {
+    @media (max-width: $size) {
+        @content;
+    }
+}

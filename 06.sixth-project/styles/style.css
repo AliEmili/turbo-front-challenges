@@ -303,18 +303,21 @@ body {
           justify-content: flex-start;
           align-items: center;
           flex-direction: row;
-          column-gap: 20px; }
-          body main .tabs-container .container .cards-container .card .img-container {
-            height: 200px;
-            overflow: hidden; }
-            body main .tabs-container .container .cards-container .card .img-container img {
-              width: 100%; }
-          body main .tabs-container .container .cards-container .card .main-text {
-            font-size: 18px;
-            padding-top: 10px;
-            padding-bottom: 5px; }
-          body main .tabs-container .container .cards-container .card .secondary-text {
-            opacity: 0.5; }
+          column-gap: 20px;
+          width: 100%; }
+          body main .tabs-container .container .cards-container .card {
+            flex-basis: 33%; }
+            body main .tabs-container .container .cards-container .card .img-container {
+              height: 200px;
+              overflow: hidden; }
+              body main .tabs-container .container .cards-container .card .img-container img {
+                width: 100%; }
+            body main .tabs-container .container .cards-container .card .main-text {
+              font-size: 18px;
+              padding-top: 10px;
+              padding-bottom: 5px; }
+            body main .tabs-container .container .cards-container .card .secondary-text {
+              opacity: 0.5; }
     body main .user-experince {
       padding: 100px 0;
       text-align: center; }
