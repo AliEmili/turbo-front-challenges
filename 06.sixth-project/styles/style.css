@@ -187,6 +187,18 @@ body {
     body main .container {
       width: 50%;
       margin: auto; }
+      @media (max-width: 1900px) {
+        body main .container {
+          width: 60%; } }
+      @media (max-width: 1600px) {
+        body main .container {
+          width: 70%; } }
+      @media (max-width: 1400px) {
+        body main .container {
+          width: 80%; } }
+      @media (max-width: 1200px) {
+        body main .container {
+          width: 90%; } }
     body main .why-container {
       padding-top: 50px;
       width: 70%;
@@ -302,6 +314,9 @@ body {
           body main .why-container .swiper {
             position: static;
             margin-top: 20px; } }
+      @media (max-width: 850px) {
+        body main .why-container {
+          margin-bottom: 50px; } }
     body main .offer {
       background-color: #f8f8f8;
       padding: 100px 0; }
@@ -321,7 +336,10 @@ body {
           justify-content: center;
           align-items: stretch;
           flex-direction: row;
-          column-gap: 50px; }
+          column-gap: 50px;
+          width: 100%;
+          flex-wrap: wrap;
+          row-gap: 50px; }
           body main .offer .container .cards-container .cards {
             display: flex;
             justify-content: flex-start;
@@ -343,6 +361,9 @@ body {
               padding-bottom: 5px; }
             body main .offer .container .cards-container .cards p:nth-child(3) {
               opacity: 0.7; }
+          @media (max-width: 1200px) {
+            body main .offer .container .cards-container {
+              width: 60%; } }
     body main .services {
       padding: 0 0 100px 0; }
       body main .services .container {
