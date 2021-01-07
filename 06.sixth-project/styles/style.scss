@@ -346,7 +346,8 @@ body {
                     margin-top: 20px;
                 }
             }
-            @include breakpoint(850px) {
+            @include breakpoint(1000px) {
+                padding-top: 0;
                 margin-bottom: 50px;
             }
         }
@@ -401,7 +402,13 @@ body {
                     @include breakpoint(1200px) {
                         width: 60%;
                     }
+                    @include breakpoint(850px) {
+                        width: 70%;
+                    }
                 }
+            }
+            @include breakpoint(1000px) {
+                padding: 50px 0;
             }
         }
         .services {
@@ -433,6 +440,12 @@ body {
                         img {
                             width: 100%;
                         }
+                        @include breakpoint(550px) {
+                            display: none;
+                        }
+                    }
+                    @include breakpoint(1000px) {
+                        padding-top: 50px;
                     }
                 }
                 .left-side {
@@ -450,7 +463,24 @@ body {
                     .secondary-text {
                         margin-bottom: 40px;
                     }
+                    @include breakpoint(1000px) {
+                        padding-top: 50px;
+                        order: 1;
+                        align-items: center;
+                        text-align: center;
+                    }
+                    @include breakpoint(550px) {
+                        padding-top: 0;
+                    }
                 }
+                @include breakpoint(1000px) {
+                    @include flexBox(flex-start,
+                    center,
+                    column);
+                }
+            }
+            @include breakpoint(550px) {
+                padding: 0;
             }
         }
         .tabs-container {
@@ -480,6 +510,18 @@ body {
                         width: 100%;
                         position: relative;
                         top: -110%;
+                        @include breakpoint(900px) {
+                            top: -80%;
+                        }
+                        @include breakpoint(700px) {
+                            top: -50%;
+                        }
+                        @include breakpoint(600px) {
+                            top: -30%;
+                        }
+                    }
+                    @include breakpoint(800px) {
+                        display: none;
                     }
                 }
                 .cards-container {
@@ -504,7 +546,18 @@ body {
                         .secondary-text {
                             opacity: 0.5;
                         }
+                        @include breakpoint(800px) {
+                            padding-bottom: 20px;
+                        }
                     }
+                    @include breakpoint(800px) {
+                        @include flexBox(flex-start,
+                        center,
+                        column);
+                    }
+                }
+                @include breakpoint(800px) {
+                    align-items: center;
                 }
             }
         }
