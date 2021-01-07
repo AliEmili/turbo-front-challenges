@@ -252,10 +252,17 @@ body {
                         .main-text {
                             font-size: 35px;
                             padding-bottom: 20px;
+                            @include breakpoint(850px) {
+                                font-size: 25px;
+                                text-align: center;
+                            }
                         }
                         .secondary-text {
                             font-size: 18px;
                             text-align: justify;
+                            @include breakpoint(850px) {
+                                text-align: center;
+                            }
                         }
                         @include breakpoint(1200px) {
                             padding: 50px 0 0 50px;
@@ -347,7 +354,7 @@ body {
                 }
             }
             @include breakpoint(1000px) {
-                padding-top: 0;
+                padding-top: 30px;
                 margin-bottom: 50px;
             }
         }
@@ -494,12 +501,19 @@ body {
                 .tab-options {
                     @include flexBox(flex-start,
                     center);
+                    flex-wrap: wrap;
                     column-gap: 20px;
                     li {
                         font-weight: bold;
                         &.active {
                             color: $primary-purple;
                         }
+                    }
+                    @include breakpoint(850px) {
+                        @include flexBox(flex-start,
+                        center,
+                        column);
+                        row-gap: 30px;
                     }
                 }
                 .main-img-container {
@@ -556,8 +570,9 @@ body {
                         column);
                     }
                 }
-                @include breakpoint(800px) {
+                @include breakpoint(850px) {
                     align-items: center;
+                    justify-content: center;
                 }
             }
         }
@@ -612,7 +627,16 @@ body {
                         }
                     }
                 }
+                @include breakpoint(1000px) {
+                    @include flexBox(flex-start,
+                    center,
+                    column);
+                    row-gap: 50px;
+                    width: 80%;
+                    margin: auto;
+                }
             }
+            @include breakpoint(850px) {}
         }
     }
     footer {
@@ -635,6 +659,25 @@ body {
                         opacity: 1;
                     }
                 }
+            }
+            @include breakpoint(1900px) {
+                width: 60%;
+            }
+            @include breakpoint(1600px) {
+                width: 70%;
+            }
+            @include breakpoint(1400px) {
+                width: 80%;
+            }
+            @include breakpoint(1200px) {
+                width: 90%;
+            }
+            @include breakpoint(800px) {
+                @include flexBox(flex-start,
+                center,
+                column);
+                width: 50%;
+                row-gap: 70px;
             }
         }
     }
