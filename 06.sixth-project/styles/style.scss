@@ -71,6 +71,42 @@ body {
                         top: 250px;
                         cursor: auto;
                     }
+                    @include breakpoint(1450px) {
+                        img {
+                            top: 300px;
+                        }
+                    }
+                }
+            }
+            @include breakpoint(1800px) {
+                .header-background-container {
+                    width: 1300px;
+                }
+            }
+            @include breakpoint(1600px) {
+                .header-background-container {
+                    width: 1200px;
+                }
+            }
+            @include breakpoint(1450px) {
+                .header-background-container {
+                    width: 1100px;
+                    right: -300px;
+                }
+            }
+            @include breakpoint(1200px) {
+                .header-background-container {
+                    right: -400px;
+                }
+            }
+            @include breakpoint(1100px) {
+                .header-background-container {
+                    right: -500px;
+                }
+            }
+            @include breakpoint(960px) {
+                .header-background-container {
+                    display: none;
                 }
             }
             nav {
@@ -85,6 +121,11 @@ body {
                         &:hover {
                             opacity: 0.7;
                         }
+                    }
+                }
+                @include breakpoint(800px) {
+                    .logo-container {
+                        align-self: center;
                     }
                 }
                 .menu-container {
@@ -103,6 +144,51 @@ body {
                             color: gainsboro;
                         }
                     }
+                    @include breakpoint(800px) {
+                        li {
+                            color: rgb(31, 31, 31);
+                            width: 100%;
+                            text-align: center;
+                            padding: 10px 0;
+                            &.active-li {
+                                border-bottom: unset;
+                                color: $primary-purple;
+                            }
+                        }
+                    }
+                }
+                @include breakpoint(1450px) {
+                    .menu-container {
+                        column-gap: 30px;
+                    }
+                }
+                @include breakpoint(960px) {
+                    .menu-container {
+                        column-gap: 20px;
+                    }
+                }
+                @include breakpoint(800px) {
+                    .menu-container {
+                        flex-direction: column;
+                    }
+                }
+            }
+            @include breakpoint(1450px) {
+                nav {
+                    width: 80%;
+                }
+            }
+            @include breakpoint(1200px) {
+                nav {
+                    width: 90%;
+                }
+            }
+            @include breakpoint(800px) {
+                nav {
+                    flex-direction: column;
+                    align-items: stretch;
+                    row-gap: 30px;
+                    width: 100%;
                 }
             }
         }
@@ -117,6 +203,46 @@ body {
                 font-size: 38px;
                 padding-bottom: 50px;
             }
+            @include breakpoint(960px) {
+                .main-text,
+                .secondary-text {
+                    color: $primary-background;
+                }
+                .main-text {
+                    font-size: 40px;
+                }
+                .secondary-text {
+                    font-size: 20px;
+                }
+            }
+        }
+        @include breakpoint(800px) {
+            .main-text-container {
+                @include flexBox(center, center, column);
+                margin: unset;
+                height: 500px;
+                width: 100%;
+                background: {
+                    image: url('../assets/window.jpg');
+                    repeat: no-repeat;
+                    size: auto;
+                    position: 85% 53%;
+                }
+            }
+        }
+    }
+    @include breakpoint(960px) {
+        header {
+            background: {
+                image: url('../assets/window.jpg');
+                size: contain;
+                repeat: no-repeat;
+            }
+        }
+    }
+    @include breakpoint(800px) {
+        header {
+            background-image: unset;
         }
     }
     main {
@@ -132,7 +258,8 @@ body {
             position: relative;
             margin-bottom: 200px;
             .two-sided-container {
-                @include flexBox(center, stretch);
+                @include flexBox(center,
+                stretch);
                 width: 100%;
                 .img-container {
                     flex-basis: 40%;
@@ -142,7 +269,8 @@ body {
                 }
                 .why-content-container {
                     flex-basis: 60%;
-                    @include flexBox(center, flex-start);
+                    @include flexBox(center,
+                    flex-start);
                     .content {
                         padding: 150px 0 0 150px;
                         .main-text {
@@ -157,7 +285,8 @@ body {
                 }
             }
             .swiper {
-                @include flexBox(center, center);
+                @include flexBox(center,
+                center);
                 background-color: #ffffff;
                 box-shadow: 5px 10px 30px 0 rgba(0, 0, 0, 0.1);
                 padding: 30px;
@@ -167,7 +296,8 @@ body {
                 bottom: -50px;
                 left: 250px;
                 .swiper-container {
-                    @include flexBox(center, center);
+                    @include flexBox(center,
+                    center);
                     column-gap: 50px;
                     position: relative;
                     .card {
@@ -193,7 +323,8 @@ body {
                         color: $primary-background;
                         cursor: pointer;
                         transition: $primary-transition;
-                        @include flexBox(center, center);
+                        @include flexBox(center,
+                        center);
                         &:hover {
                             opacity: 0.8;
                         }
@@ -215,7 +346,9 @@ body {
             background-color: $secondary-background;
             padding: 100px 0;
             .container {
-                @include flexBox(center, center, column);
+                @include flexBox(center,
+                center,
+                column);
                 .main-text {
                     font-size: 40px;
                     padding-bottom: 20px;
@@ -225,10 +358,13 @@ body {
                     padding-bottom: 50px;
                 }
                 .cards-container {
-                    @include flexBox(center, stretch);
+                    @include flexBox(center,
+                    stretch);
                     column-gap: 50px;
                     .cards {
-                        @include flexBox(flex-start, center, column);
+                        @include flexBox(flex-start,
+                        center,
+                        column);
                         text-align: center;
                         padding: 20px 10px;
                         background-color: $primary-background;
@@ -257,10 +393,12 @@ body {
         .services {
             padding: 0 0 100px 0;
             .container {
-                @include flexBox(center, stretch);
+                @include flexBox(center,
+                stretch);
                 .right-side {
                     flex-basis: 60%;
-                    @include flexBox(center, flex-end);
+                    @include flexBox(center,
+                    flex-end);
                     .barbershop-container {
                         width: 300px;
                         margin-bottom: 50px;
@@ -285,7 +423,9 @@ body {
                 }
                 .left-side {
                     flex-basis: 40%;
-                    @include flexBox(flex-end, flex-start, column);
+                    @include flexBox(flex-end,
+                    flex-start,
+                    column);
                     .main-text {
                         margin-bottom: 20px;
                         font-size: 30px;
@@ -303,10 +443,13 @@ body {
             background-color: $secondary-background;
             padding: 100px 0;
             .container {
-                @include flexBox(flex-start, flex-start, column);
+                @include flexBox(flex-start,
+                flex-start,
+                column);
                 row-gap: 20px;
                 .tab-options {
-                    @include flexBox(flex-start, center);
+                    @include flexBox(flex-start,
+                    center);
                     column-gap: 20px;
                     li {
                         font-weight: bold;
@@ -326,7 +469,8 @@ body {
                     }
                 }
                 .cards-container {
-                    @include flexBox(flex-start, center);
+                    @include flexBox(flex-start,
+                    center);
                     column-gap: 20px;
                     width: 100%;
                     .card {
@@ -361,7 +505,8 @@ body {
                 padding-bottom: 100px;
             }
             .comments-container {
-                @include flexBox(center, stretch);
+                @include flexBox(center,
+                stretch);
                 column-gap: 70px;
                 .card {
                     flex-basis: 50%;
@@ -381,10 +526,12 @@ body {
                         }
                     }
                     .row {
-                        @include flexBox(space-between, center);
+                        @include flexBox(space-between,
+                        center);
                         padding-bottom: 20px;
                         .stars {
-                            @include flexBox(center, center);
+                            @include flexBox(center,
+                            center);
                             img {
                                 width: 15px;
                             }
@@ -407,7 +554,8 @@ body {
         .logo-container {
             width: 50%;
             margin: auto;
-            @include flexBox(center, center);
+            @include flexBox(center,
+            center);
             column-gap: 100px;
             .logo {
                 flex-basis: 25%;
