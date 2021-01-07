@@ -359,7 +359,8 @@ body {
                 width: 15px; }
           body main .user-experince .comments-container .card .comment-container blockquote {
             opacity: 0.5;
-            font-style: italic; }
+            font-style: italic;
+            line-height: 30px; }
   body footer {
     padding-bottom: 50px;
     background-color: #fbfcfe; }
