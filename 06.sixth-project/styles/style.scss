@@ -70,42 +70,28 @@ body {
                         position: relative;
                         top: 250px;
                         cursor: auto;
-                    }
-                    @include breakpoint(1450px) {
-                        img {
+                        @include breakpoint(1450px) {
                             top: 300px;
                         }
                     }
                 }
-            }
-            @include breakpoint(1800px) {
-                .header-background-container {
+                @include breakpoint(1800px) {
                     width: 1300px;
                 }
-            }
-            @include breakpoint(1600px) {
-                .header-background-container {
+                @include breakpoint(1600px) {
                     width: 1200px;
                 }
-            }
-            @include breakpoint(1450px) {
-                .header-background-container {
+                @include breakpoint(1450px) {
                     width: 1100px;
                     right: -300px;
                 }
-            }
-            @include breakpoint(1200px) {
-                .header-background-container {
+                @include breakpoint(1200px) {
                     right: -400px;
                 }
-            }
-            @include breakpoint(1100px) {
-                .header-background-container {
+                @include breakpoint(1100px) {
                     right: -500px;
                 }
-            }
-            @include breakpoint(960px) {
-                .header-background-container {
+                @include breakpoint(960px) {
                     display: none;
                 }
             }
@@ -122,9 +108,7 @@ body {
                             opacity: 0.7;
                         }
                     }
-                }
-                @include breakpoint(800px) {
-                    .logo-container {
+                    @include breakpoint(800px) {
                         align-self: center;
                     }
                 }
@@ -143,9 +127,7 @@ body {
                         &:hover {
                             color: gainsboro;
                         }
-                    }
-                    @include breakpoint(800px) {
-                        li {
+                        @include breakpoint(800px) {
                             color: rgb(31, 31, 31);
                             width: 100%;
                             text-align: center;
@@ -156,35 +138,23 @@ body {
                             }
                         }
                     }
-                }
-                @include breakpoint(1450px) {
-                    .menu-container {
+                    @include breakpoint(1450px) {
                         column-gap: 30px;
                     }
-                }
-                @include breakpoint(960px) {
-                    .menu-container {
+                    @include breakpoint(960px) {
                         column-gap: 20px;
                     }
-                }
-                @include breakpoint(800px) {
-                    .menu-container {
+                    @include breakpoint(800px) {
                         flex-direction: column;
                     }
                 }
-            }
-            @include breakpoint(1450px) {
-                nav {
+                @include breakpoint(1450px) {
                     width: 80%;
                 }
-            }
-            @include breakpoint(1200px) {
-                nav {
+                @include breakpoint(1200px) {
                     width: 90%;
                 }
-            }
-            @include breakpoint(800px) {
-                nav {
+                @include breakpoint(800px) {
                     flex-direction: column;
                     align-items: stretch;
                     row-gap: 30px;
@@ -215,9 +185,7 @@ body {
                     font-size: 20px;
                 }
             }
-        }
-        @include breakpoint(800px) {
-            .main-text-container {
+            @include breakpoint(800px) {
                 @include flexBox(center, center, column);
                 margin: unset;
                 height: 500px;
@@ -230,18 +198,14 @@ body {
                 }
             }
         }
-    }
-    @include breakpoint(960px) {
-        header {
+        @include breakpoint(960px) {
             background: {
                 image: url('../assets/window.jpg');
                 size: contain;
                 repeat: no-repeat;
             }
         }
-    }
-    @include breakpoint(800px) {
-        header {
+        @include breakpoint(800px) {
             background-image: unset;
         }
     }
@@ -281,7 +245,21 @@ body {
                             font-size: 18px;
                             text-align: justify;
                         }
+                        @include breakpoint(1200px) {
+                            padding: 50px 0 0 50px;
+                        }
+                        @include breakpoint(1000px) {
+                            padding: 30px 0 0 30px;
+                        }
+                        @include breakpoint(850px) {
+                            padding: 30px 0;
+                        }
                     }
+                }
+                @include breakpoint(850px) {
+                    @include flexBox(flex-start,
+                    center,
+                    column);
                 }
             }
             .swiper {
@@ -311,6 +289,9 @@ body {
                             }
                             padding-top: 20px;
                         }
+                        @include breakpoint(850px) {
+                            padding-bottom: 20px;
+                        }
                     }
                     .btn-next {
                         position: absolute;
@@ -338,7 +319,19 @@ body {
                             position: relative;
                             right: 5px;
                         }
+                        @include breakpoint(850px) {
+                            display: none;
+                        }
                     }
+                    @include breakpoint(850px) {
+                        @include flexBox(flex-start,
+                        center,
+                        column);
+                    }
+                }
+                @include breakpoint(1300px) {
+                    position: static;
+                    margin-top: 20px;
                 }
             }
         }
