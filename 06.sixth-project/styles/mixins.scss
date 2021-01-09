@@ -10,3 +10,17 @@
         @content;
     }
 }
+
+@mixin column-gap($size) {
+    column-gap: $size;
+    -moz-column-gap: $size;
+    -webkit-column-gap: $size;
+    grid-column-gap: $size;
+}
+
+@mixin row-gap($size) {
+    row-gap: $size;
+    -moz-row-gap: $size;
+    -webkit-row-gap: $size;
+    grid-row-gap: $size;
+}
