@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cell Map</title>
+</head>
+
+<body>
+    <div>
+        <table id="table">
+
+        </table>
+    </div>
+    <script>
+        const table = document.getElementById('table');
+        const write = (table, words) => {
+            let sum = 0;
+            const COLOR = 'blue';
+            const rows = 4;
+            // From here : to calculate needed columns
+            for (let i = 0; i < words.length; i++) {
+                if (['b', 'c'].includes(words[i])) {
+                    sum += 4;
+                } else if (['a'].includes(words[i])) {
+                    sum += 5;
+                }
+            }
+            const columns = sum - 1;
+            // till here
+            // From here : create and append rows and columns to the table
+            for (let i = 0; i < rows; i++) {
+                const row = document.createElement('tr');
+                for (let j = 0; j < columns; j++) {
+                    const column = document.createElement('td');
+                    row.appendChild(column);
+                }
+                table.appendChild(row);
+            }
+            let coordinate = [0, 0];
+            const paint = (r, c, COLOR) => {
+                table.rows[r].cells[c].style.backgroundColor = COLOR;
+            }
+            const color_evens = (r, c) => {
+                if (r % 2 !== 0) {
+                    paint(r, c, COLOR);
+                }
+            }
+            const color_last_three = (r, c) => {
+                if (r > 0) {
+                    paint(r, c, COLOR);
+                }
+            }
+            const coloring = (word) => {
+                    if (word === 'b') {
+                        for (let c = coordinate[0]; c < columns; c++) {
+                            for (let r = coordinate[1]; r < rows; r++) {
+                                if (c === coordinate[0]) {
+                                    paint(r, c, COLOR);
+                                } else if (c === coordinate[0] + 1) {
+                                    color_evens(r, c)
+                                } else if (c === coordinate[0] + 2) {
+                                    color_last_three(r, c);
+                                } else {
+                                    break;
+                                }
+                            }
+                        }
+                        coordinate[0] += 4;
+                    } else if (word === 'a') {
+                        for (let c = coordinate[0]; c < columns; c++) {
+                            for (let r = coordinate[1]; r < rows; r++) {
+                                if ([coordinate[0], coordinate[0] + 2].includes(c)) {
+                                    color_last_three(r, c)
+                                } else if ([coordinate[0] + 1, coordinate[0] + 3].includes(c)) {
+                                    color_evens(r, c);
+                                } else {
+                                    break;
+                                }
+                            }
+                        }
+                        coordinate[0] += 5;
+                    } else if (word === 'c') {
+                        for (let c = coordinate[0]; c < columns; c++) {
+                            for (let r = coordinate[1]; r < rows; r++) {
+                                if ([coordinate[0]].includes(c)) {
+                                    color_last_three(r, c);
+                                } else if ([coordinate[0] + 1, coordinate[0] + 2].includes(c)) {
+                                    color_evens(r, c);
+                                } else {
+                                    break;
+                                }
+                            }
+                        }
+                        coordinate[0] += 4;
+                    }
+                }
+                // main action
+            for (let i = 0; i < words.length; i++) {
+                coloring(words[i]);
+            }
+        }
+
+
+        write(table, 'baabcb');
+    </script>
+    <style>
+        table {
+            border-collapse: collapse;
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        
+        td {
+            border: 1px solid black;
+            height: 20px;
+            min-width: 20px;
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>
