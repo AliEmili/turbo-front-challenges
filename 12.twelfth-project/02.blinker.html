@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blinker</title>
+</head>
+
+<body>
+    <div class="element">element</div>
+    <script>
+        const element = document.getElementsByClassName('element')[0];
+        const blink = (node, onTime, offTime, duration) => {
+            const customTimeOut = (onTime, offTime) => {
+                setTimeout(() => {
+                    node.hidden = true;
+                    setTimeout(() => {
+                        node.hidden = false;
+                    }, offTime);
+                }, onTime);
+            }
+            customTimeOut(onTime, offTime);
+            const main_interval = setInterval(() => {
+                customTimeOut(onTime, offTime)
+            }, onTime + offTime);
+            setTimeout(() => {
+                clearInterval(main_interval);
+            }, duration);
+        }
+        blink(element, 1000, 200, 5000);
+    </script>
+</body>
+
+</html>
