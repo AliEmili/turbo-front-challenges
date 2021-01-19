@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div show-info="name"></div>
+    <div show-info="age"></div>
+    <script>
+        const user = {
+            name: 'ali',
+            age: 25
+        }
+        const divs = document.getElementsByTagName('div');
+        for (div of divs) {
+            const show_info = div.getAttribute('show-info');
+            for (property in user) {
+                if (show_info === property) {
+                    div.innerHTML = user[show_info];
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

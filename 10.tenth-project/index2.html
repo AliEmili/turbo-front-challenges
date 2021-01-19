@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        notify(document.body, '<h1>hi</li>', 3000)
+
+        function notify(target, html, time) {
+            const div = document.createElement('div');
+            div.innerHTML = html
+            target.prepend(div);
+            setTimeout(() => {
+                div.remove();
+            }, time);
+        }
+    </script>
+</body>
+
+</html>
