@@ -41,9 +41,12 @@
         const MOVE_TIME = 3000;
         const fillTime = () => {
             const date = new Date();
-            document.getElementById('hour').innerHTML = date.getHours();
-            document.getElementById('minute').innerHTML = date.getMinutes();
-            document.getElementById('second').innerHTML = date.getSeconds();
+            const hours = date.getHours();
+            const minutes = date.getMinutes();
+            const seconds = date.getSeconds();
+            document.getElementById('hour').innerHTML = hours > 10 ? hours : "0" + hours;
+            document.getElementById('minute').innerHTML = minutes > 10 ? minutes : "0" + minutes;
+            document.getElementById('second').innerHTML = seconds > 10 ? seconds : "0" + seconds;
         }
         const container = document.getElementsByClassName('container')[0];
         setInterval(() => {
