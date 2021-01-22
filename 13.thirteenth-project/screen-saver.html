@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Saver</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+            background-color: rgb(29, 29, 29);
+            height: 100vh;
+            font-size: 100px;
+        }
+        
+        .container {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+        }
+        
+        span {
+            color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span id="hour"></span>
+        <span>:</span>
+        <span id="minute"></span>
+        <span>:</span>
+        <span id="second"></span>
+    </div>
+    <script>
+        // time for moving can be changed here 
+        const MOVE_TIME = 3000;
+        const fillTime = () => {
+            const date = new Date();
+            document.getElementById('hour').innerHTML = date.getHours();
+            document.getElementById('minute').innerHTML = date.getMinutes();
+            document.getElementById('second').innerHTML = date.getSeconds();
+        }
+        const container = document.getElementsByClassName('container')[0];
+        setInterval(() => {
+            fillTime();
+        }, 1000);
+        setInterval(() => {
+            let docHeight = window.innerHeight;
+            let docWidth = window.innerWidth;
+            let divHeight = container.offsetHeight;
+            let divWidth = container.offsetWidth;
+            let maxHeight = docHeight - divHeight;
+            let maxWidth = docWidth - divWidth;
+            container.style.top = `${Math.floor(Math.random() * maxHeight)}px`;
+            container.style.left = `${Math.floor(Math.random() * maxWidth)}px`;
+        }, MOVE_TIME);
+    </script>
+</body>
+
+</html>
