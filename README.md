@@ -14,5 +14,5 @@ This repository is to organize my codes relating to a course called 'Turbo Front
 	<li>Tenth Project : {first: filling value of divs based on their non-standard attribute from an object, second: a function that gets an element and prepend another element in it then it will be removed after some time which is specified by a parameter. </li>
 	<li>Eleventh : Reasearch about EcmaScript compatibility</li> 
 	<li>Twelfth : {cellmap: a function that gets a table as an input and a string which consists of only abc characters and writes it in the table, blinker: is a function that gets an element and onTime and offTime and duration and blinks in the duration with times given</li>
-	<li>Thirteenth : {screensaver: a digital clock that moves in window randomly ,autoscroller: a function factory that gets an element with pixel per second input and starts scrolling and stops whenever you call the functions after instanciating though}</li>
+	<li>Thirteenth : {screensaver: a digital clock that moves in window randomly ,autoscroller: a function factory that gets an element with pixel per second input and starts scrolling and stops whenever you call the functions after instanciating though, analog-clock}</li>
 </ul>
