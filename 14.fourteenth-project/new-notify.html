@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        notify(document.body, '<h1>hi</li>', 5000);
+
+
+        function notify(target, html, time) {
+            const handleClick = () => {
+                clearTimeout(remove_timeout);
+                document.removeEventListener('click', handleClick);
+                div.remove();
+            }
+            const div = document.createElement('div');
+            div.innerHTML = html
+            target.prepend(div);
+            document.addEventListener('click', handleClick);
+            const remove_timeout = setTimeout(handleClick, time);
+        }
+    </script>
+</body>
+
+</html>
