@@ -15,5 +15,5 @@ This repository is to organize my codes relating to a course called 'Turbo Front
 	<li>Eleventh : Reasearch about EcmaScript compatibility</li> 
 	<li>Twelfth : { <b>cellmap</b>: a function that gets a table as an input and a string which consists of only abc characters and writes it in the table, <b>blinker</b>: is a function that gets an element and onTime and offTime and duration and blinks in the duration with times given</li>
 	<li>Thirteenth : { <b>screensaver</b>: a digital clock that moves in window randomly, <b>autoscroller</b>: a function factory that gets an element with pixel per second input and starts scrolling and stops whenever you call the functions after instanciating though, <b>analog-clock</b> }</li>
-	<li>Fourteenth : { <b>carousel</b>, <b>LazyLoad Images</b>, <b>new-notify : adding something to DOM and removing it by clicking on document, <b>notify_rightclick</b> : exactly the previous one instead it's getting removed by rightclicking on the element using event delegation</b>
+	<li>Fourteenth : { <b>carousel</b>, <b>LazyLoad Images</b>, <b>new-notify</b> : adding something to DOM and removing it by clicking on document, <b>notify_rightclick</b> : exactly the previous one instead it's getting removed by rightclicking on the element using event delegation</b>
 </ul>
