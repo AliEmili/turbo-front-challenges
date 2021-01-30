@@ -1,0 +1,19 @@
+.carousel {
+    width: 450px;
+    background-color: gray;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.show-item {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+button {
+    z-index: 2;
+}
