@@ -70,17 +70,45 @@
             }
         }
         const previous_handler = (times) => {
-            for( let i=0 ; i<times ; i++){
-                handlePrev();
+            for (let i = 1; i <= times; i++) {
+                handlePrev()
             }
         }
         const next_handler = (times) => {
-            for( let i=0 ; i<times ; i++){
+            for (let i = 0; i < times; i++) {
+                handleNext()
+            }
+        }
+        const prev_middle_handler = () => {
+            while (current_pointer > 0) {
+                handlePrev();
+            }
+        }
+        const next_middle_handler = () => {
+            while (current_pointer < all_items.length - 3) {
                 handleNext();
             }
         }
-        document.getElementsByClassName('prevbtn')[0].addEventListener('click', () => previous_handler(2));
-        document.getElementsByClassName('nextbtn')[0].addEventListener('click', () => next_handler(2));
+        const switchHandler = (which, func, all_items_func) => {
+            switch (which) {
+                case 1:
+                    func(2);
+                    break;
+                case 2:
+                    all_items_func();
+                    break;
+            }
+        }
+        const nextMouseHandler = (e) => {
+            switchHandler(e.which, next_handler, next_middle_handler);
+        }
+        const prevMouseHandler = (e) => {
+            switchHandler(e.which, previous_handler, prev_middle_handler);
+        }
+        const prevbtn = document.getElementsByClassName('prevbtn')[0];
+        const nextbtn = document.getElementsByClassName('nextbtn')[0];
+        prevbtn.addEventListener('mousedown', prevMouseHandler);
+        nextbtn.addEventListener('mousedown', nextMouseHandler);
     </script>
 </body>
 
