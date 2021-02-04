@@ -1,0 +1,59 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 500px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    row-gap: 200px;
+    column-gap: 200px;
+}
+
+.tooltip {
+    background-color: black;
+    position: absolute;
+    color: whitesmoke;
+    padding: 20px;
+    min-width: 100px;
+    text-align: center;
+    top: 30px;
+}
+
+.container .box {
+    padding: 20px;
+    color: whitesmoke;
+    transition: all 0.3s ease;
+}
+
+.container .box:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.box:nth-child(1) {
+    background-color: red;
+}
+
+.box:nth-child(2) {
+    background-color: blue;
+}
+
+.box:nth-child(3) {
+    background-color: green;
+}
+
+.box:nth-child(4) {
+    background-color: teal;
+}
