@@ -7,8 +7,6 @@ const getUsers = (page) => {
         .then((res) => res.json())
         .then((result) => {
             total_pages = result.total_pages;
-            const loadContainer = document.querySelector('.load-container');
-            loadContainer.remove();
             const list = document.createElement('ul');
             result.data.forEach(user => {
                 const item = document.createElement('li');
@@ -33,7 +31,11 @@ const getUsers = (page) => {
                 // didn't complete it cause total_pages is 2 by default :)
             }
         })
-        .catch((err) => console.log(err));
+        .catch((err) => console.log(err))
+        .finally(() => {
+            const loadContainer = document.querySelector('.load-container');
+            loadContainer.remove();
+        });
 
 }
 
