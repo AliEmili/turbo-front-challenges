@@ -1,3 +1,4 @@
+alert('start typing a or b or c characters');
 const table = document.getElementById('table');
 let coordinate = [0, 0];
 const write = (table, word) => {
