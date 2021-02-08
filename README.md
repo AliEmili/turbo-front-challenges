@@ -17,5 +17,6 @@ This repository is to organize my codes relating to a course called 'Turbo Front
 	<li>Thirteenth : { <b>screensaver</b>: a digital clock that moves in window randomly, <b>autoscroller</b>: a function factory that gets an element with pixel per second input and starts scrolling and stops whenever you call the functions after instanciating though, <b>analog-clock</b> }</li>
 	<li>Fourteenth : { <b>carousel</b>, <b>LazyLoad Images</b>, <b>new-notify</b> : adding something to DOM and removing it by clicking on document, <b>notify_rightclick</b> : exactly the previous one instead it's getting removed by rightclicking on the element using event delegation</li>
 	<li>Fifteenth : { <b>new-carousel</b> : carousel in previous folder but moving two items and also going to the last or first by middle mouse button click, <b>new-analog-clock</b> : the clock in previous directory - the difference is that position of second hand can be changed by clicking on the clock }</li> 
-	<li>Sixteen : { <b>new-cellmap</b> : a table that is being created and painted as you click on abc characters on keyboard, <b>tooltip</b> : simple tooltip using event delegation and behavior pattern</b>}</li>
+	<li>Sixteenth : { <b>new-cellmap</b> : a table that is being created and painted as you click on abc characters on keyboard, <b>tooltip</b> : simple tooltip using event delegation and behavior pattern</b>}</li>
+	<li>Seventeenth : { <b>userlist</b> : a simple fetch api use, <b>promisify</b> : a simple function that returns a promise which ensures loading image is promisified }
 </ul>
