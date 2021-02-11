@@ -1,0 +1,81 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.first-section,
+.last-section {
+    height: 1000px;
+}
+
+.first-section {
+    background-color: rgb(238, 247, 255);
+}
+
+.last-section {
+    background-color: rgb(255, 242, 219);
+}
+
+.main-section .imgs-container {
+    width: 600px;
+    min-height: 430px;
+    margin: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-section .imgs-container .layer1,
+.main-section .imgs-container .layer2,
+.main-section .imgs-container .layer3,
+.main-section .imgs-container .layer5 {
+    position: absolute;
+    height: auto;
+}
+
+
+/* window */
+
+.main-section .imgs-container .layer1 {
+    top: 0;
+    left: 50px;
+}
+
+
+/* left guy */
+
+.main-section .imgs-container .layer2 {
+    left: 0px;
+}
+
+
+/* right guy */
+
+.main-section .imgs-container .layer3 {
+    right: 0px;
+    width: 200px;
+}
+
+
+/* main */
+
+.main-section .imgs-container .layer4 {
+    position: absolute;
+    width: 600px;
+}
+
+
+/* stove */
+
+.main-section .imgs-container .layer5 {
+    left: 0;
+    bottom: 0;
+    width: 330px;
+}
