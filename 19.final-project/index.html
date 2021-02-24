@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cars</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body dir="rtl">
+    <div class="container">
+      <div class="bg-color"></div>
+      <figure class="notification-container">
+        <img
+          class="notification"
+          src="./assets/icons/bell.png"
+          alt="notifications"
+        />
+      </figure>
+      <figure class="car-container">
+        <img src="./assets/icons/car.png" alt="car-icon" />
+      </figure>
+      <div class="socials-container">
+        <figure class="social-icon-container">
+          <img src="./assets/icons/facebook.png" alt="facebook icon" />
+        </figure>
+        <figure class="social-icon-container">
+          <img src="./assets/icons/twitter.png" alt="twitter icon" />
+        </figure>
+        <figure class="social-icon-container">
+          <img src="./assets/icons/google.png" alt="google icon" />
+        </figure>
+      </div>
+      <div class="buttons-row">
+        <button class="btn-prev disable">
+          <img src="./assets/icons/chevron-thin-right.png" alt="arrow right" />
+        </button>
+        <button class="btn-next">
+          <img src="./assets/icons/chevron-thin-left.png" alt="arrow left" />
+        </button>
+      </div>
+      <div class="page-holder">
+        <div class="each-page"></div>
+        <div class="each-page"></div>
+        <div class="each-page"></div>
+        <div class="each-page"></div>
+      </div>
+      <main>
+        <div class="text-content">
+          <h1 class="title"></h1>
+          <p class="summary"></p>
+          <div class="price"></div>
+          <button class="pay">
+            <span class="pay-text">پرداخت</span>
+            <span class="icon">
+              <img
+                src="./assets/icons/chevron-small-left.png"
+                alt="arrow left"
+              />
+            </span>
+          </button>
+        </div>
+        <figure class="img-container">
+          <img class="main-img" alt="mercedes benz" />
+        </figure>
+        <div class="specification">
+          <div class="acceleration"></div>
+          <div class="velocity"></div>
+          <div class="horsepower"></div>
+        </div>
+      </main>
+    </div>
+    <script src="./js/cars.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
