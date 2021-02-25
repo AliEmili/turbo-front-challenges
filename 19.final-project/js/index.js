@@ -11,14 +11,17 @@ const nextButton = document.querySelector(".btn-next");
 const prevButton = document.querySelector(".btn-prev");
 const pageHolder = document.querySelector(".page-holder");
 const containerElement = document.querySelector(".container");
-const text_content = document.querySelector(".text-content");
+const fadingEffect = document.querySelector(".fadingEffect");
 let currentIndex = 0;
 
 const disableElements = () => {
   imgElement.classList.add("disable");
   specificationElement.classList.add("disable");
   bg_color.classList.add("disable");
-  text_content.classList.add("disable");
+  setTimeout(() => {
+    fadingEffect.style.width = "100%";
+    fadingEffect.style.backgroundColor = cars[currentIndex].theme;
+  }, 700);
   containerElement.style.backgroundColor = bg_color.style.backgroundColor;
 };
 
@@ -26,7 +29,9 @@ const enableElements = () => {
   imgElement.classList.remove("disable");
   specificationElement.classList.remove("disable");
   bg_color.classList.remove("disable");
-  text_content.classList.remove("disable");
+  setTimeout(() => {
+    fadingEffect.style.width = 0;
+  }, 1400);
 };
 
 const checkBtnStyles = () => {
@@ -85,14 +90,16 @@ prevButton.addEventListener("click", handlePrev);
 const setData = (currentIndex, afterTime) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      titleElement.innerHTML = cars[currentIndex].title;
-      summaryElement.innerHTML = cars[currentIndex].summary;
-      priceElement.innerHTML = cars[currentIndex].price;
       bg_color.style.backgroundColor = cars[currentIndex].theme;
       imgElement.src = `./assets/images/${cars[currentIndex].image}`;
       accelerationElement.innerHTML = cars[currentIndex].specifications[0];
       velocityElement.innerHTML = cars[currentIndex].specifications[1];
       horsepowerElement.innerHTML = cars[currentIndex].specifications[2];
+      setTimeout(() => {
+        titleElement.innerHTML = cars[currentIndex].title;
+        summaryElement.innerHTML = cars[currentIndex].summary;
+        priceElement.innerHTML = cars[currentIndex].price;
+      }, afterTime);
       resolve("done");
     }, afterTime);
   });
