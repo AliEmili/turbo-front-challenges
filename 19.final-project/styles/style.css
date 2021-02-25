@@ -1,3 +1,7 @@
+:root {
+  --blue: rgb(106, 196, 238);
+}
+
 @font-face {
   font-family: IranSans;
   src: url(../assets/fonts/IRANSansWeb\(FaNum\).woff) format("woff");
@@ -32,6 +36,11 @@ button {
   position: absolute;
   width: 100%;
   height: 100%;
+  transition: transform 0.7s ease;
+}
+
+.container .bg-color.disable {
+  transform: translateX(150%);
 }
 
 .container .notification-container::before {
@@ -120,13 +129,26 @@ main .specification {
   display: flex;
   flex-direction: column;
   row-gap: 3px;
-  max-height: 500px;
+  width: 1px;
+  max-height: 250px;
 }
 
 .container .page-holder .each-page {
   width: 1px;
-  height: 50px;
   background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.container .page-holder .each-page .backgroundColor {
+  background-color: var(--blue);
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s ease;
+  transform: translateY(-100%);
+}
+
+.container .page-holder .each-page .backgroundColor.enable {
+  transform: translateY(0%);
 }
 
 .container .buttons-row button.disable {
@@ -149,12 +171,32 @@ main {
 }
 
 main .text-content {
+  position: relative;
   flex: 0 0 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   row-gap: 30px;
+}
+
+@keyframes slideIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100;
+  }
+}
+
+main .text-content.disable::after {
+  content: "";
+  right: -5px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease;
+  animation: slideIn 0.5s ease;
 }
 
 main .text-content .title {
@@ -175,7 +217,7 @@ main .text-content .pay {
   font-size: 17px;
   width: 150px;
   height: 45px;
-  background-color: rgb(106, 196, 238);
+  background-color: var(--blue);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -206,6 +248,14 @@ main .img-container {
   flex: 0 0 60%;
 }
 
+main .img-container .main-img {
+  transition: transform 0.7s ease;
+}
+
+main .img-container .main-img.disable {
+  transform: translateX(-200%);
+}
+
 main .specification {
   position: absolute;
   z-index: 1;
@@ -215,4 +265,9 @@ main .specification {
   display: flex;
   color: rgba(255, 255, 255, 0.4);
   column-gap: 30px;
+  transition: transform 0.7s ease;
+}
+
+main .specification.disable {
+  transform: translateY(500%);
 }
